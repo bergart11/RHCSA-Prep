@@ -1,0 +1,4 @@
+-	Set the default boot target to multiuser.
+Commands Series:
+1)	Check default boot target: $ systemctl get-default
+2)	Set default target to multiuser: $ systemctl set-default multi-user.target
