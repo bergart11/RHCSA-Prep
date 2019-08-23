@@ -1,0 +1,12 @@
+-	Configure the primary network interface with hostname example.com (alias rhcsa 1). 
+- IP address 192.168.351.20/24     Gateway 192.168.351.2  nameserver 192.168.351.10
+
+Commands Series:
+1)	Check the used interface: $ ifconfig
+In my case it is ens33
+2)	$ nmcli connection delete ens33
+3)	Add network configuration: $ nmcli connection add con-name eth0 ifname ethernet autoconnect yes ip4 192.168.351.20/24 gw4 192.168.351.2
+4)	Modify ip of DNS server: $ nmcli connection modify eth0 ipv4.dns 192.168.1.10
+5)	Activate the network and check the operation is working: $ nmcli connection down eth0 ; nmcli connection up eth0
+$ cat /etc/resolv.conf
+$ cat /etc/sysconfig/network-scripts/ifcfg-eth0
