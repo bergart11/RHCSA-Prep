@@ -1,0 +1,4 @@
+-	Set SElinux to enforce mode.
+1)	Check enforcing mode: $ getenforce
+2)	Properly check also can be done by accessing configuration of SElinux: $ cat /etc/selinux/config
+3)	In the display: “SELINUX = enforcing “ means enforcing is working; otherwise we change it to enforcing.
